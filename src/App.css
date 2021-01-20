@@ -1,12 +1,14 @@
 .App {
   text-align: center;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #elevator-group {
   display: flex;
   flex-direction: row;
-  
 }
 
 #elevator-group h1 {
@@ -14,6 +16,16 @@
 }
 
 #floor-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.floor {
+  border: 1px solid black;
+  /* height: 40px; */
+}
+
+.elevator {
   display: flex;
   flex-direction: column;
 }
