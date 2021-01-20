@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import Car from "./components/Car";
 import HighRise from "./components/HighRise";
 
 function App() {
@@ -9,6 +9,9 @@ function App() {
   return (
     <div className="App">
       <HighRise floors={floors} />
+      <Car bgColor="blue" />
+      <Car bgColor="red" />
+      <Car bgColor="yellow" />
     </div>
   );
 }

@@ -20,9 +20,15 @@
   flex-direction: column;
 }
 
+#high-rise {
+  display: flex;
+}
+
 .floor {
   border: 1px solid black;
-  /* height: 40px; */
+  margin: 10px;
+  width: 100px;
+  height: 60px;
 }
 
 .elevator {
