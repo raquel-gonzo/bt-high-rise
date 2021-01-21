@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Elevator = ({ id }) => {
-  const [currentFloor, setCurrentFloor] = useState(0);
-
+const Elevator = ({ id, floors, currentFloor, setCurrentFloor }) => {
   function ascend(e) {
     e.preventDefault();
+    if (currentFloor >= 10) {
+      window.alert("You're at the top.");
+      return;
+    }
+    return <NumPad floors={floors} />;
     setCurrentFloor(currentFloor + 1);
   }
 
@@ -14,6 +17,8 @@ const Elevator = ({ id }) => {
       window.alert("You're on the lowest floor.");
       return;
     }
+    return <NumPad floors={floors} />;
+
     setCurrentFloor(currentFloor - 1);
   }
 
@@ -23,11 +28,11 @@ const Elevator = ({ id }) => {
       <p>current floor: {currentFloor}</p>
       <button onClick={ascend}>Up</button>
       <button onClick={descend}>Down</button>
-      {/* <div>
+      <div>
         <label>Jump directly to floor: </label>
         <input type="number" min="-1" max="10"/>
         <button>Jump</button>
-      </div> */}
+      </div>
     </div>
   );
 };
